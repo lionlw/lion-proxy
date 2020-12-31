@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">  
+	<properties> 
+		<property name="LOG_HOME">d:/work/code/temp/log/LION.UTILITY/LION.UTILITY</property>
+	</properties>
+	<Appenders>
+		<!-- 输出日志到控制台，用于开发 -->
+		<Console name="logConsole" target="SYSTEM_OUT">
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+		</Console> 
+		
+		<!-- 输出系统中各种引用包错误日志到文件，用于上线 -->
+		<RollingFile name="logErrorsys" fileName="${LOG_HOME}_errorsys.log" filePattern="${LOG_HOME}_errorsys.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="ERROR" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出程序错误日志到文件，用于上线 -->
+		<RollingFile name="logError" fileName="${LOG_HOME}_error.log" filePattern="${LOG_HOME}_error.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="ERROR" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+
+		<!-- 输出程序普通日志到文件，用于上线 -->
+		<RollingFile name="logInfo" fileName="${LOG_HOME}_info.log" filePattern="${LOG_HOME}_info.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="DEBUG" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出cmd日志到文件，用于上线 -->
+		<RollingFile name="logCMD" fileName="${LOG_HOME}_cmd.log" filePattern="${LOG_HOME}_cmd.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+	
+		<!-- 输出httpserver日志到文件，用于上线 -->
+		<RollingFile name="logHttpServer" fileName="${LOG_HOME}_httpServer.log" filePattern="${LOG_HOME}_httpServer.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出rpc日志到文件，用于上线 -->
+		<RollingFile name="logRPC" fileName="${LOG_HOME}_rpc.log" filePattern="${LOG_HOME}_rpc.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出rpc http日志到文件，用于上线 -->
+		<RollingFile name="logRPCHttp" fileName="${LOG_HOME}_rpcHttp.log" filePattern="${LOG_HOME}_rpcHttp.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出twc日志到文件，用于上线 -->
+		<RollingFile name="logTWC" fileName="${LOG_HOME}_twc.log" filePattern="${LOG_HOME}_twc.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出p2p日志到文件，用于上线 -->
+		<RollingFile name="logP2P" fileName="${LOG_HOME}_p2p.log" filePattern="${LOG_HOME}_p2p.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+		
+		<!-- 输出接口日志到文件，用于上线 -->
+		<RollingFile name="logIO" fileName="${LOG_HOME}_io.log" filePattern="${LOG_HOME}_io.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="INFO" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+
+		<!-- 输出接口日志到文件，用于上线 -->
+		<RollingFile name="logErrorLogic" fileName="${LOG_HOME}_errorLogic.log" filePattern="${LOG_HOME}_errorLogic.log.%d{yyyyMMdd}">
+			<ThresholdFilter level="ERROR" onMatch="NEUTRAL" onMismatch="DENY"/> 
+			<PatternLayout charset="UTF-8" pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t]-[%l]-[%p] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+			</Policies>
+		</RollingFile>
+
+
+	</Appenders>
+
+	<Loggers>
+		<!-- 日志输出定义 --> 
+		<Logger name="logError" level="ERROR" additivity="false" includeLocation="true">
+			<AppenderRef ref="logError" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logInfo" level="DEBUG" additivity="false" includeLocation="true">
+			<AppenderRef ref="logInfo" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logCMD" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logCMD" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logHttpServer" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logHttpServer" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logRPC" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logRPC" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logRPCHttp" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logRPCHttp" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logTWC" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logTWC" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logP2P" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logP2P" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 -->
+		</Logger>
+		<Logger name="logIO" level="INFO" additivity="false" includeLocation="true">
+			<AppenderRef ref="logIO" />
+		</Logger>
+		<Logger name="logErrorLogic" level="ERROR" additivity="false" includeLocation="true">
+			<AppenderRef ref="logErrorLogic" />
+		</Logger>
+
+
+		<!-- 根日志输出定义 -->
+		<Root level="ERROR" includeLocation="true">
+			<AppenderRef ref="logErrorsys" />
+			<AppenderRef ref="logConsole" /> <!-- 开发配置：输出日志到控制台，正式上线需去除 --> 
+		</Root>
+	</Loggers>
+</Configuration>
